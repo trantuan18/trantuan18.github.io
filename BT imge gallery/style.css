@@ -1,0 +1,28 @@
+*{
+	box-sizing: border-box;
+}
+.wrap{
+	max-width: 1000px;
+	margin: auto;
+	background-color: white;
+}
+.baner{
+	max-width: 100%;
+	border : 1px solid none;
+}
+.wraper{
+	display: grid;
+	grid-template-columns: 33.3333% 33.3333% 33.3333%;
+	grid-row-gap: 20px;
+	background-size: center;
+	margin: auto;
+}
+.mainmenu{
+	background-color: red;
+	border: 1px solid orange;
+}
+.doc{
+	margin: auto;
+	text-align:center;
+	font-size: 1.3em;
+}

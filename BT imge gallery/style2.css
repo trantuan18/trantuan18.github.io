@@ -1,0 +1,24 @@
+.wraper img{
+	max-width: 90%;
+	margin : auto;
+	margin-top: 10px;
+	display: block;
+	border:1px solid orange;
+}
+.wraper img:hover{
+	border: 3px solid blue;
+
+}
+#mainmenu a{
+	text-decoration : none;
+	font-size: 20px;
+	color: white;
+	margin: 5px;
+}
+body{
+	background-color: #E6E6E6
+}
+#mainmenu a:hover{
+	color: blue;
+
+}
