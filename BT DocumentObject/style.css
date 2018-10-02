@@ -1,0 +1,38 @@
+
+*{ 
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+.wrap{
+	max-width: 800px;
+	margin: auto;
+	margin-top: 50px;
+	border: 2px solid orange;
+}
+h3{
+	text-align: center;
+	color: red;
+}
+img{
+	max-width: 13%;
+	margin:5px 10px;	
+}
+#p1{
+	margin: 10px 10px;
+	text-align: justify;
+	color: black;
+}
+#p2{
+	margin: 10px 10px;
+	text-align: justify;
+}
+#p3{
+	margin: 10px 10px;
+	text-align: justify;
+}
+.nd{
+	position: fixed;
+	bottom: 71px;
+
+}

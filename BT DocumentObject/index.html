@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Nhà giả kim </title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="wrap">
+		<h3> Nhà giả kim </h3>
+		<p id='p1' class="no-img"> 
+			<img src="http://www.ngantruyen.com/static/upload/Alchemyst_Nicholas_Flamel.jpg" align="left" >
+		Tất cả những trải nghiệm trong chuyến phiêu du theo đuổi vận mệnh của mình đã giúp Santiago thấu hiểu được ý nghĩa sâu xa nhất của hạnh phúc, hòa hợp với vũ trụ và con người.' </p>
+
+		<p id='p2' class='no-img'> Tiểu thuyết Nhà giả kim của Paulo Coelho như một câu chuyện cổ tích giản dị, nhân ái, giàu chất thơ, thấm đẫm những minh triết huyền bí của phương Đông. Trong lần xuất bản đầu tiên tại Brazil vào năm 1988, sách chỉ bán được 900 bản. Nhưng, với số phận đặc biệt của cuốn sách dành cho toàn nhân loại, vượt ra ngoài biên giới quốc gia, Nhà giả kim đã làm rung động hàng triệu tâm hồn, trở thành một trong những cuốn sách bán chạy nhất mọi thời đại, và có thể làm thay đổi cuộc đời người đọc. </p>
+
+		<p id='p3' class='no-img'> “Nhưng nhà luyện kim đan không quan tâm mấy đến những điều ấy. Ông đã từng thấy nhiều người đến rồi đi, trong khi ốc đảo và sa mạc vẫn là ốc đảo và sa mạc. Ông đã thấy vua chúa và kẻ ăn xin đi qua biển cát này, cái biển cát thường xuyên thay hình đổi dạng vì gió thổi nhưng vẫn mãi mãi là biển cát mà ông đã biết từ thuở nhỏ. Tuy vậy, tự đáy lòng mình, ông không thể không cảm thấy vui trước hạnh phúc của mỗi người lữ khách, sau bao ngày chỉ có cát vàng với trời xanh nay được thấy chà là xanh tươi hiện ra trước mắt. ‘Có thể Thượng đế tạo ra sa mạc chỉ để cho con người biết quý trọng cây chà là,’ ông nghĩ.” </p>
+	</div>
+	<div class='nd'>
+		<div class="changeFont"> Thay đổi font-size 
+			<input type="number" id="x1"> 
+			<button onclick="changeFontsize()"> Run </button>
+		</div>
+		<div class="changeFont"> Chọn đoạn văn thứ:  
+			<input type="number" id="x2"> 
+			<button onclick="increaseFontsize()">ZoomIn</button>
+			<button onclick="decreaseFontSize()">ZoomOut</button>
+		</div>
+		<div class="changeColor"> Thay đổi color
+			<button onclick="changeColor()"> change color</button>
+		</div>
+		<div class="changeBColor"> Thay đổi BackGround-Color
+			<input type="text" id="bc1"> 
+			<button onclick="changeBColor()"> changeBColor </button>
+		</div>
+		<div> Thay đổi content
+			<input type="text" id="para1" style="width:50px">
+			>
+			<input type="text" id="para2" style="width:50px">
+			<button onclick="copyContent()"> copyContent (vd: p1,p2) </button>
+		</div>
+	</div>
+	<script type="text/javascript" src="fun.js"></script>
+</body>
+</html>
