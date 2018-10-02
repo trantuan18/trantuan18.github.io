@@ -76,8 +76,9 @@ function buttononcham(){
 }
 function buttononpercent(){
 	x='%';
-	s=s+x;
-	document.getElementById("result").innerText = s; 
+	var t=s+x;
+	document.getElementById("result").innerText = t; 
+	s=s+'/100'
 }
 function buttononmultiplication(){
 	x='*';s=s+x;
