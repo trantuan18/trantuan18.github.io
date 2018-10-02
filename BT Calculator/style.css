@@ -1,0 +1,27 @@
+*{
+	box-sizing: border-box;
+}
+p{
+	text-align: right;
+	margin-right: 20px;
+}	
+.wrap{
+	width: 750px;
+	margin:150px auto;
+}
+.display{
+	width: 700px;
+	height: 100px;
+	border: 1px solid black;
+}
+.nut{
+	width: 150px;
+	height: 30px;
+	margin: 5px 10px;
+}
+.nut0{
+	margin: 5px 10px;
+	width: 324px;
+	height: 30px;
+}
+
