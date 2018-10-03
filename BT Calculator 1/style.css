@@ -1,0 +1,45 @@
+*{
+	box-sizing: border-box;
+	
+}
+p{
+	text-align: right;
+	margin-right: 20px;
+}	
+.wrap{
+	width: 250px;
+	margin:150px auto;
+}
+.display{
+	width: 212px;
+	height: 72px;
+	border: 1px solid black;
+	margin-bottom: 5px;
+}
+.nut{
+	margin-top: 1px;
+	width: 50px;
+	height: 50px;
+	background-color: unset;
+}
+.nut:hover{
+	background-color: blue;
+	color: white;
+	transition: all 0.25s linear;
+}
+
+.nut:active{
+	background-color: orange;
+}
+
+button:focus {outline:0;}
+
+.nut0{
+	width: 104px;
+	height: 50px;
+	background-color: unset;
+}
+.clear{
+	width: 104px;
+	height: 50px;
+}
