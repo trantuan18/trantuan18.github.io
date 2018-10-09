@@ -1,13 +1,5 @@
 var arr=[
 	{
-		Quest  : ' ' ,
-		A : '' ,
-		B : '' , 
-		C : '' ,
-		D : '' ,
-		tr : ''
-	},
-	{
 		Quest  : 'Một sào Bắc bộ, Trung bộ có diện tích bằng bao nhiêu mét vuông ? ' ,
 		A : '360' ,
 		B : '500' , 
@@ -47,27 +39,56 @@ var arr=[
 		D : ' Đầu tháng 3 ' ,
 		tr : ' Giằm tháng giêng '
 	},
-	{
-		Quest  : ' ' ,
-		A : '' ,
-		B : '' , 
-		C : '' ,
-		D : '' ,
-		tr : ''
-	},
 ];
+
+var q= document.querySelectorAll('.change');
+document.getElementById('a').style.display = 'none';
+document.getElementById('b').style.display = 'none';
+document.getElementById('c').style.display = 'none';
+document.getElementById('d').style.display =' none';
+	 
+
 var num=0;var dem=0;
-var q= document.querySelectorAll('.change')
-for (var i=0; i<q.length ; i++){
+var start=document.querySelector('.start');
+start.addEventListener('click',run);
+
+
+// xet khi click 
+function run(){
+	document.getElementById('q').innerHTML = arr[0].Quest;
+	document.getElementById('a').innerHTML = arr[0].A;
+	document.getElementById('b').innerHTML = arr[0].B;
+	document.getElementById('c').innerHTML = arr[0].C;
+	document.getElementById('d').innerHTML = arr[0].D;
+	document.getElementById('a').style.display = 'inline-block';
+	document.getElementById('b').style.display = 'inline-block';
+	document.getElementById('c').style.display = 'inline-block';
+	document.getElementById('d').style.display = 'inline-block';
+	for (let i=0; i<q.length ; i++){
 		q[i].addEventListener('click', function(){
-			num=num+1;
-			if ( this.innerHTML==arr[num-1].tr){ dem=dem+1};
+			num++;	
+			if ( num<arr.length){
+				if ( this.innerHTML==arr[num-1].tr){ dem=dem+1};
+				//alert( this.innerHTML +' ' +arr[num-1].tr+' '+ dem +'xx'+arr.length);
 				document.getElementById('q').innerHTML = arr[num].Quest;
 				document.getElementById('a').innerHTML = arr[num].A;
 				document.getElementById('b').innerHTML = arr[num].B;
 				document.getElementById('c').innerHTML = arr[num].C;
 				document.getElementById('d').innerHTML = arr[num].D;
-			if (num>=6){ alert('Bạn trả lời đúng' + dem +'/5 câu hỏi')};
-			
-			})
-	}
+			}
+			else if ( num==arr.length){ 
+				if ( this.innerHTML==arr[num-1].tr){ dem=dem+1};
+				document.getElementById('q').innerHTML ='Chúc mừng bạn đã trả lời đúng '+ dem +'/5 câu hỏi';
+				document.getElementById('a').style.display = 'none';
+				document.getElementById('b').style.display = 'none';
+				document.getElementById('c').style.display = 'none';
+				document.getElementById('d').style.display = 'none';
+				num=0;dem=0;
+			} else {num=0;dem=0; }
+		});
+	};	
+}
+
+var re=document.querySelector('.re');
+re.addEventListener('click',run);
+
