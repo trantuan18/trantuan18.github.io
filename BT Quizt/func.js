@@ -83,12 +83,14 @@ function run(){
 				document.getElementById('b').style.display = 'none';
 				document.getElementById('c').style.display = 'none';
 				document.getElementById('d').style.display = 'none';
-				num=0;dem=0;
+				//num=0;dem=0;
 			} else {num=0;dem=0; }
 		});
 	};	
 }
 
 var re=document.querySelector('.re');
-re.addEventListener('click',run);
+re.addEventListener('click',function(){
+	window.location.assign('index.html');
+});
 
