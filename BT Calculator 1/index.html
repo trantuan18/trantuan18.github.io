@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title> Calculator </title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <title> Calculator </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-	<div class='wrap'> 
-		<div class="display"> 
-			<p id='result'> </p> 
-			<p id='result1'> </p>
-		</div>
-		<button onclick="buttononac()" class="nut clear"> AC </button>
-		<button onclick="buttononc()" class="nut" > C </button>
-		<button onclick="buttononbinhphuong('&sup2')" class="nut"> x&sup2  </button>
-		<button onclick="buttonon('/')" class="nut"> &divide </button>
-		<button onclick="buttonongiaithua('!')" class="nut"> x! </button>
-		<button onclick="buttononpercent('%')" class="nut"> % </button>
-		<button onclick="buttononsqrt('&#8730')" class="nut"> &#8730 </button>
-		<button onclick="buttonon('-')" class="nut"> - </button>
-		<button onclick="buttonon(7)" class="nut"> 7 </button>
-		<button onclick="buttonon(8)" class="nut"> 8 </button>
-		<button onclick="buttonon(9)" class="nut"> 9 </button>
-		<button onclick="buttonon('+')" class="nut"> + </button>
-		<button onclick="buttonon(4)" class="nut"> 4 </button>
-		<button onclick="buttonon(5)" class="nut"> 5 </button>
-		<button onclick="buttonon(6)" class="nut"> 6 </button>
-		<button onclick="buttonon('*')" class="nut"> x </button>
-		<button onclick="buttonon(1)" class="nut"> 1 </button>
-		<button onclick="buttonon(2)" class="nut"> 2 </button>
-		<button onclick="buttonon(3)" class="nut"> 3 </button>
-		<button onclick="buttononfinish('=')" class="nut"> = </button>
-		<button onclick="buttonon('.')" class="nut"> . </button>
-		<button onclick="buttonon(0)" class="nut0 nut"> 0 </button>
-	</div>
-	<script type="text/javascript" src="func.js"></script>
+    <div class='wrap'>
+        <div><button id='changeColor'><i>Hasagi</i></button></div>
+        <div class="display">
+            <p id='result'> </p>
+            <p id='result1'> </p>
+        </div>
+        <button onclick="buttononac()" class="nut clear"> AC </button>
+        <button onclick="buttononc()" class="nut"> C </button>
+        <button onclick="buttononbinhphuong('&sup2')" class="nut"> x&sup2  </button>
+        <button onclick="buttonon('/')" class="nut"> &divide </button>
+        <button onclick="buttonongiaithua('!')" class="nut"> x! </button>
+        <button onclick="buttononpercent('%')" class="nut"> % </button>
+        <button onclick="buttononsqrt('&#8730')" class="nut"> &#8730 </button>
+        <button onclick="buttonon('-')" class="nut"> - </button>
+        <button onclick="buttonon(7)" class="nut"> 7 </button>
+        <button onclick="buttonon(8)" class="nut"> 8 </button>
+        <button onclick="buttonon(9)" class="nut"> 9 </button>
+        <button onclick="buttonon('+')" class="nut"> + </button>
+        <button onclick="buttonon(4)" class="nut"> 4 </button>
+        <button onclick="buttonon(5)" class="nut"> 5 </button>
+        <button onclick="buttonon(6)" class="nut"> 6 </button>
+        <button onclick="buttonon('*')" class="nut"> x </button>
+        <button onclick="buttonon(1)" class="nut"> 1 </button>
+        <button onclick="buttonon(2)" class="nut"> 2 </button>
+        <button onclick="buttonon(3)" class="nut"> 3 </button>
+        <button onclick="buttononfinish('=')" class="nut"> = </button>
+        <button onclick="buttonon('.')" class="nut"> . </button>
+        <button onclick="buttonon(0)" class="nut0 nut"> 0 </button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <script type="text/javascript" src="func.js"></script>
 </body>
+
 </html>
