@@ -1,0 +1,70 @@
+*
+{
+    box-sizing: border-box;
+}
+body
+{
+    background-image: url(img/bia1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+}
+.wrap
+{
+    position: relative;
+    margin: auto;
+    max-width: 1265px;
+    max-height: 616px;
+    height: 100%;
+}
+.content
+{
+    position: relative;
+    overflow: auto;
+    margin: auto;
+}
+.grid
+{
+    max-width: 120px;
+    position: relative;
+    float: left;
+    margin-left: 5px;
+}
+.grid .card img
+{
+    max-width: 100%;
+    height: auto;
+    border: 1.5px solid white;
+    border-radius: 5px;
+}
+.card
+{
+    position: relative;
+}
+.card .front
+{
+    transform: rotateY(180deg)
+}
+.card .back
+{
+    transform: rotateY(0deg);
+    position: absolute;
+    top: 0px;
+    left: 0px; 
+}
+.card:hover .back
+{
+    transform: rotateY(180deg);
+}
+.card:hover .front
+{
+    transform: rotateY(0deg);
+}
+.card .back,
+.card .front
+{
+    transition: all 0.5s;
+    backface-visibility: hidden;
+}
