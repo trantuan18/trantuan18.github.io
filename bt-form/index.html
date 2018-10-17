@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Form đăng ký</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+
+<body>
+    <div class='wrap'>
+        <div><h2>Đăng ký tài khoản </h2></div>
+        <form action="result.html" >
+            <div class="inputbox">
+                <input type='text'name ='user_name' required='' autocomplete = "off"/>
+                <label> Họ và tên </label>
+            </div>
+            <div class="inputbox">
+                    <input type='date'name ='date' required='' autocomplete = "off"/>
+                    <!-- <label> Ngày sinh </label> -->
+            </div>
+            <div class="inputbox">
+                <input type='text'name ='contact' required='' autocomplete = "off"/>
+                <label> Số điện thoại </label>
+            </div>
+            <div class="inputbox">
+                <input type='text'name ='email' required='' autocomplete = "off"/>
+                <label> Địa chỉ email </label>
+            </div>
+            <div class="inputbox">
+                <input type='password'name ='passWord' required='' autocomplete="new-password" />
+                <label> Mật khẩu  </label>
+            </div>
+            <div class="inputboxsex">
+                <input type='radio'name ='sex' value="Nam" required='' id='Nam'/>
+                <label for='Nam'> Nam  </label>
+                <input type='radio'name ='sex' value="Nữ" required=''id='Nữ'/>
+                <label for="Nữ"> Nữ  </label>
+            </div>
+            <input type='submit' name='ok' value="Đăng ký"> 
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- <script src="main.js"></script> -->
+</body>
+
+</html>
