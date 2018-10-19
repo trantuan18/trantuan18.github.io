@@ -7,43 +7,52 @@
     <title>Form đăng ký</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <audio src="r.mp3" autoplay="autoplay" width=0px heigh=0px loop='loop'></audio>
 </head>
 
 <body>
-    <div class='wrap'>
-        <div><h2>Đăng ký tài khoản </h2></div>
-        <form action="result.html" >
-            <div class="inputbox">
-                <input type='text'name ='user_name' required='' autocomplete = "off"/>
-                <label> Họ và tên </label>
+    <div class="rainny">
+        <div class='wrap'>
+            <div>
+                <h2>Đăng ký tài khoản </h2>
             </div>
-            <div class="inputbox">
-                    <input type='date'name ='date' required='' autocomplete = "off"/>
+            <form action="result.html" id='checkForm'>
+                <div class="inputbox">
+                    <input type='text' id='name' name='user_name' required='' autocomplete="off" />
+                    <span class="note"> </span>
+                    <label> Họ và tên </label>
+                </div>
+                <div class="inputbox">
+                    <input type='date' name='date' required='' autocomplete="off" />
                     <!-- <label> Ngày sinh </label> -->
-            </div>
-            <div class="inputbox">
-                <input type='text'name ='contact' required='' autocomplete = "off"/>
-                <label> Số điện thoại </label>
-            </div>
-            <div class="inputbox">
-                <input type='text'name ='email' required='' autocomplete = "off"/>
-                <label> Địa chỉ email </label>
-            </div>
-            <div class="inputbox">
-                <input type='password'name ='passWord' required='' autocomplete="new-password" />
-                <label> Mật khẩu  </label>
-            </div>
-            <div class="inputboxsex">
-                <input type='radio'name ='sex' value="Nam" required='' id='Nam'/>
-                <label for='Nam'> Nam  </label>
-                <input type='radio'name ='sex' value="Nữ" required=''id='Nữ'/>
-                <label for="Nữ"> Nữ  </label>
-            </div>
-            <input type='submit' name='ok' value="Đăng ký"> 
-        </form>
+                </div>
+                <div class="inputbox">
+                    <input type='text' id='contact' name='contact' required='' autocomplete="off" />
+                    <span class="note"> </span>
+                    <label> Số điện thoại </label>
+                </div>
+                <div class="inputbox">
+                    <input type='text' id='email' name='email' required='' autocomplete="off" />
+                    <span class="note"> </span>
+                    <label> Địa chỉ email </label>
+                </div>
+                <div class="inputbox">
+                    <input type='password' id='pass' name='passWord' required='' autocomplete="new-password" />
+                    <span class="note"> </span>
+                    <label> Mật khẩu </label>
+                </div>
+                <div class="inputboxsex">
+                    <input type='radio' name='sex' value="Nam" required='' id='Nam' />
+                    <label for='Nam'> Nam </label>
+                    <input type='radio' name='sex' value="Nữ" required='' id='Nữ' />
+                    <label for="Nữ"> Nữ </label>
+                </div>
+                <input type='submit' name='ok' value="Đăng ký">
+            </form>
+        </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <!-- <script src="main.js"></script> -->
+    <script src="main1.js"></script>
 </body>
 
 </html>
