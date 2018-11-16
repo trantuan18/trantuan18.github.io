@@ -1,0 +1,25 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+.content img
+{
+	width: 30%;
+	display: block;
+}
+.content
+{
+	position: relative;
+}
+.content::before
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #0000ff61;
+	width: 30%;
+	height: 100%;
+	
+}

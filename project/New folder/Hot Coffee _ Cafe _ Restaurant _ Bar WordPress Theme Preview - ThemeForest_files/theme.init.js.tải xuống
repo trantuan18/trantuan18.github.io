@@ -1,0 +1,252 @@
+/* global jQuery:false */
+/* global HOTCOFFEE_STORAGE:false */
+
+
+// Theme-specific first load actions
+//==============================================
+function hotcoffee_theme_ready_actions() {
+	"use strict";
+	// Put here your init code for the theme-specific actions
+	// It will be called before core actions
+}
+
+
+// Theme-specific scroll actions
+//==============================================
+function hotcoffee_theme_scroll_actions() {
+	"use strict";
+	// Put here your theme-specific code for scroll actions
+	// It will be called when page is scrolled (before core actions)
+}
+
+
+// Theme-specific resize actions
+//==============================================
+function hotcoffee_theme_resize_actions() {
+	"use strict";
+	// Put here your theme-specific code for resize actions
+	// It will be called when window is resized (before core actions)
+}
+
+
+// Theme-specific shortcodes init
+//=====================================================
+function hotcoffee_theme_sc_init(cont) {
+	"use strict";
+	// Put here your theme-specific code for init shortcodes
+	// It will be called before core init shortcodes
+	// @param cont - jQuery-container with shortcodes (init only inside this container)
+	
+	
+	jQuery(document).ready(function(){
+		"use strict";
+		hotcoffee_ajax_get_menuitem(jQuery('.sc_menuitems_item'));
+	});
+	
+}
+
+
+// Theme-specific post-formats init
+//=====================================================
+function hotcoffee_theme_init_post_formats() {
+	"use strict";
+	// Put here your theme-specific code for init post-formats
+	// It will be called before core init post_formats when page is loaded or after 'Load more' or 'Infonite scroll' actions
+}
+
+var menuItemStopAjax = true;
+var menuItemList;
+var menuItemIdNext = 0;
+var menuItemIdPrev = 0;
+
+
+function hotcoffee_ajax_get_menuitem(item){
+	
+	if (item.find('.show_popup_menuitem').length > 0) {
+		item.find('.show_popup_menuitem').each(function (){
+			"use strict";
+			
+			var menuItemLink = jQuery(this);
+			var menuItemId = menuItemLink.attr('data-el');
+			menuItemLink.off('click');			
+			menuItemLink.click(function(e) {
+				"use strict";
+				
+				if ( menuItemStopAjax == true ) {
+					jQuery('#page_preloader').css({display: 'block', opacity: 0}).animate({opacity:0.8}, 300);
+					var menuItemListId = jQuery(this).closest('.sc_menuitems').attr("id");
+					menuItemList = HOTCOFFEE_STORAGE['menu_items'][menuItemListId].split(",");
+					
+					menuItemIdNext = 0;
+					menuItemIdPrev = 0;
+					if ( menuItemList.length > 1 ) {
+						for (var i=0; i<menuItemList.length; i++ ) {
+							if ( menuItemList[i] === menuItemId ) {
+								var j = i+1;
+								if ( j <  menuItemList.length ) {
+									menuItemIdNext = menuItemList[j];
+								} else {
+									menuItemIdNext = menuItemList[0];
+								}
+								
+								j = i-1;
+								if ( j >=  0 ) {
+									menuItemIdPrev = menuItemList[j];
+								} else {
+									menuItemIdPrev = menuItemList[menuItemList.length-1];
+								}
+							}
+						}
+					}
+					
+					menuItemStopAjax = false;
+					
+					jQuery.post(HOTCOFFEE_STORAGE['ajax_url'], {
+						action: 'ajax_menuitem',
+						nonce: HOTCOFFEE_STORAGE['ajax_nonce'],
+						text: menuItemId
+					}).done(function(response) {
+						"use strict";
+						var rez = {};
+						try {
+							rez = JSON.parse(response);
+						} catch (e) {
+							rez = { error: HOTCOFFEE_STORAGE['ajax_error'] };
+						}
+
+						if (rez.error === '') {
+							jQuery('#page_preloader').animate({opacity:0}, 500, function() { jQuery(this).css({display: 'none'}); });
+							jQuery("html,body").css("overflow","hidden");
+							jQuery('body').append("<div id='overlay'></div>");
+							jQuery('body').append("<div class='popup_menuitem'></div>");
+							jQuery('#overlay').show().css({'filter' : 'alpha(opacity=100)'});
+							jQuery('.popup_menuitem').append(rez.data);
+							jQuery('.popup_menuitem .sc_menuitems_wrap').append("<a class='close_menuitem' href='#'><span class='icon-cross92'></span></a>");
+							if ( menuItemIdNext > 0 ) {
+								jQuery('.popup_menuitem .sc_menuitems_wrap .sc_menuitem_content').append("<a class='prev_menuitem prevnext_menuitem' data-el='"+menuItemIdPrev+"'  href='#'><span class='icon-left'></span></a>");
+								jQuery('.popup_menuitem .sc_menuitems_wrap .sc_menuitem_content').append("<a class='next_menuitem prevnext_menuitem' data-el='"+menuItemIdNext+"'  href='#'><span class='icon-right'></span></a>");
+							}
+
+						} else {
+							jQuery('#page_preloader').animate({opacity:0}, 500, function() { jQuery(this).css({display: 'none'}); });
+						}
+					});	
+				}
+				
+				e.preventDefault();
+				return false;
+				
+			});
+			
+		});
+
+	}
+	
+}
+
+var prevnextMenuItemStopAjax = true;
+jQuery('.prevnext_menuitem').off('click');			
+jQuery('.prevnext_menuitem').live('click', function () {
+	"use strict";
+	
+	var prevnextItemLink = jQuery(this);
+	var prevnextItemId = prevnextItemLink.attr('data-el');
+	
+	if ( prevnextMenuItemStopAjax == true ) {
+		
+		jQuery('#page_preloader').css({display: 'block', opacity: 0}).animate({opacity:0.8}, 300);
+		prevnextMenuItemStopAjax = false;
+		
+		jQuery.post(HOTCOFFEE_STORAGE['ajax_url'], {
+			action: 'ajax_menuitem',
+			nonce: HOTCOFFEE_STORAGE['ajax_nonce'],
+			text: prevnextItemId
+		}).done(function(response) {
+			"use strict";
+			var rez = {};
+			try {
+				rez = JSON.parse(response);
+			} catch (e) {
+				rez = { error: HOTCOFFEE_STORAGE['ajax_error'] };
+			}
+
+			if (rez.error === '') {
+				prevnextMenuItemStopAjax = true;
+				jQuery('#page_preloader').animate({opacity:0}, 500, function() { jQuery(this).css({display: 'none'}); });
+				if (jQuery('#overlay').length > 0) {
+
+					jQuery('.popup_menuitem').fadeOut(750);
+					setTimeout(function(){
+						jQuery('.popup_menuitem').html('');					
+
+						jQuery('.popup_menuitem').append(rez.data).fadeIn(750);
+						jQuery('.popup_menuitem .sc_menuitems_wrap').append("<a class='close_menuitem' href='#'><span class='icon-cross92'></span></a>");
+
+						menuItemIdNext = 0;
+						menuItemIdPrev = 0;
+						if ( menuItemList.length > 1 ) {
+							for (var i=0; i<menuItemList.length; i++ ) {
+								if ( menuItemList[i] === prevnextItemId ) {
+									var j = i+1;
+									if ( j <  menuItemList.length ) {
+										menuItemIdNext = menuItemList[j];
+									} else {
+										menuItemIdNext = menuItemList[0];
+									}
+
+									j = i-1;
+									if ( j >=  0 ) {
+										menuItemIdPrev = menuItemList[j];
+									} else {
+										menuItemIdPrev = menuItemList[menuItemList.length-1];
+									}
+								}
+							}
+
+						}
+
+						if ( menuItemIdNext > 0 ) {
+							jQuery('.popup_menuitem .sc_menuitems_wrap .sc_menuitem_content').append("<a class='prev_menuitem prevnext_menuitem' data-el='"+menuItemIdPrev+"'  href='#'><span class='icon-left'></span></a>");
+							jQuery('.popup_menuitem .sc_menuitems_wrap .sc_menuitem_content').append("<a class='next_menuitem prevnext_menuitem' data-el='"+menuItemIdNext+"'  href='#'><span class='icon-right'></span></a>");
+						}
+					
+					},750);
+
+				} else {
+					jQuery('#page_preloader').animate({opacity:0}, 500, function() { jQuery(this).css({display: 'none'}); });
+					console.log('overlay = no');
+				}
+
+			} else {
+				//hotcoffee_message_warning(HOTCOFFEE_STORAGE['strings']['search_error']);
+				console.log('error');
+			}
+		});	
+		
+	}
+
+});
+
+
+jQuery('.close_menuitem').live('click', function () {
+	"use strict";
+	jQuery('.popup_menuitem').remove('.popup_menuitem');
+	jQuery('#overlay').remove('#overlay');
+	jQuery("html,body").css("overflow","auto");
+	menuItemStopAjax = true;
+	return false;
+});
+
+
+jQuery('.popup_menuitem').live('click', function (event) {
+	"use strict";
+	var target = jQuery(event.target);
+	//console.log(target);
+	if ( target.hasClass('popup_menuitem') ) {
+		jQuery('.popup_menuitem').remove('.popup_menuitem');
+		jQuery('#overlay').remove('#overlay');
+		jQuery("html,body").css("overflow","auto");
+		menuItemStopAjax = true;
+		return false;
+	}
+});

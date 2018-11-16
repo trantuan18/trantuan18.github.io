@@ -1,0 +1,60 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    padding-top:5px; 
+}
+
+.Teinte-Saturation
+{
+    width: 100%;
+    height: 50%;
+}
+
+.impor
+{
+    position: relative;
+}
+
+.top-1
+{
+    position: absolute;
+    top: 67px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.logo
+{
+    display: block;
+    position: relative;
+    top: -36px;
+    left: 1%;
+    margin: 0 50px;
+}
+
+a 
+{
+    color: #feffff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+.spa
+{
+    margin: 0 10px;
+}
+
+.logotext
+{
+    position: absolute;
+    top:27px;
+    left:421px;
+    color: #feffff;
+    font-size: 35px;
+}
