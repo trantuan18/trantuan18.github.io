@@ -58,3 +58,16 @@ a
     color: #feffff;
     font-size: 35px;
 }
+.sa
+{
+    width: 100%;
+    height: 500px;
+    background-color: aqua;
+}
+.fixed
+{
+    position: fixed;
+    top: 25px;
+    left: 185px;
+    background-color: rgba(37, 83, 168, 0.664);
+}
