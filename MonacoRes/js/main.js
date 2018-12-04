@@ -1,11 +1,27 @@
+var swiper = new Swiper('.swiper-container', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+    },
+});
 // menu
 let po = $('#menu').position();
-$(window).scroll( function(){
+$(window).scroll(function () {
     let poScroll = $(document).scrollTop();
-    if (parseInt(poScroll) > parseInt(po.top)){
+    if (parseInt(poScroll) > parseInt(po.top)) {
         $('#menu').addClass('menu-fixed');
         $('#menu').removeClass('menu-top');
-    } else { 
+    } else {
         $('#menu').addClass('menu-top');
         $('#menu').removeClass('menu-fixed')
     }
@@ -15,7 +31,7 @@ $(window).scroll( function(){
 // botton back to top 
 $(document).ready(function () {
     $(window).scroll(function () {
-        if ( $(this).scrollTop() > 100 ) {
+        if ($(this).scrollTop() > 100) {
             $("#back-to-top").removeClass("no");
             $("#back-to-top").addClass("back-top");
         } else {
@@ -24,9 +40,12 @@ $(document).ready(function () {
         };
     });
 
-    $("#back-to-top").on('click',function(){
+    $("#back-to-top").on('click', function () {
         var body = $("html, body");
-        body.animate({scrollTop:0}, 500);
+        body.animate({
+            scrollTop: 0
+        }, 500);
     });
 });
 // end back to top
+

@@ -56,18 +56,18 @@ nav img
 .back-top
 {
     position: fixed;
-    bottom: 10px;
-    right: 10px;
-    width: 60px;
-    height: 60px;
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     z-index: 10000;
-    background-image: url("../img/home.png");
+    /* background-image: url("../img/chevron-arrow-up.psd"); */
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: white;
-    border-radius: 10px;
-    border: 1px solid black;
+    background-color: rgb(255, 0, 0);
+    border-radius: 50%;
+    border: 1px solid rgb(255, 255, 255);
 }
 /* end menu */
 .btn-fix
@@ -79,9 +79,11 @@ nav img
 }
 .text-imp
 {
-    font-family: 'Great+Vibes', cursive;
-    font-size: 3em;
+    font-family: 'Great Vibes', cursive;
+    font-size: 60px;
+    line-height: 60px;
     color: rgb(255, 0, 0);
+    letter-spacing: 2px;
 }
 .btn-red
 {
@@ -109,6 +111,10 @@ nav img
     border: 1px solid rgb(255, 255, 255);
 }
 /* ----- content ------ */
+.img-head
+{
+    height: 100vh;
+}
 .content-1
 {
     padding-top:35px;
@@ -159,6 +165,10 @@ nav img
     left: 50%;
     transform: translate(-50%,0%);
 }
+.img-ani:hover
+{
+    animation: fipOutY 
+}
 .speciality1
 {
     margin-top:-25px;
@@ -180,12 +190,45 @@ nav img
     padding: 50px 0px;
     margin-bottom: 60px;
 }
+/* discover */
+.discover
+{
+    margin-top: 0px;
+}
+.discover-hei
+{
+    height: 50px;
+}
+.card
+{
+    overflow: hidden;
+    display: block;
+}
+.swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 500px;
+}
 /* chef */
 .chef
 {
     position: relative;
     box-sizing: border-box;
     padding: 20px 25px;
+}
+.chef::after
+{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
 }
 .img-chef
 {
@@ -351,7 +394,7 @@ nav img
 /* ///footer */
 footer
 {
-    background-color: black;
+    background-color: #222;
     padding: 45px;
 }
 .logo-foot
@@ -396,6 +439,7 @@ footer
     width: 10%;
     margin-left:0px;
     margin-right:10px; 
+    cursor: pointer;
 }
 .finish
 {
@@ -403,4 +447,33 @@ footer
     font-size: 14px;
     padding-top:5px; 
     color: rgba(240, 248, 255, 0.651);
+}
+/* ------------swip ---------------------------- */
+.swiper-container 
+{
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide 
+{
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 400px;
+}
+.card
+{
+    overflow: hidden;
+    display: block;
+}
+.card-body 
+{
+    text-align: center;
+}
+/* ========================================================== */
+.modal-sub
+{
+    margin-top:10px;
 }
