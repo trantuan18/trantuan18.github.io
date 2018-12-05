@@ -26,6 +26,17 @@ $(window).scroll(function () {
         $('#menu').removeClass('menu-fixed')
     }
 });
+let po1 = $('#menuSm').position();
+$(window).scroll(function () {
+    let poScroll = $(document).scrollTop();
+    if (parseInt(poScroll) > parseInt(po1.top)) {
+        $('#menuSm').addClass('menu-fixed');
+        $('#menuSm').removeClass('menu-top');
+    } else {
+        $('#menuSm').addClass('menu-top');
+        $('#menuSm').removeClass('menu-fixed')
+    }
+});
 // end menu
 
 // botton back to top 
