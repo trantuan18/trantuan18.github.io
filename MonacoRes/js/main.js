@@ -59,4 +59,7 @@ $(document).ready(function () {
     });
 });
 // end back to top
-
+$('.icon-menu').on('click',function(){
+    $('.menu-left').toggle();
+    // $('.menu-left').removeClass('menu-left');
+})
