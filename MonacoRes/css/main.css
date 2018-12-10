@@ -3,10 +3,26 @@
     padding: 0px;
     margin: 0px;
 }
+body
+{
+    font-size: 100%;
+}
 .full-body
 {
     padding: 0px;
 }
+.slice-text
+{
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.8em;
+    color: aliceblue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50%,-50%); */
+    animation: fadeIn 4s forwards;
+}
+
 /* menu */
 .menu-fixed
 {
@@ -39,6 +55,11 @@
     z-index: 10;
 }
 nav a
+{
+    color: aliceblue;
+    font-size: 20px;
+}
+nav b
 {
     color: aliceblue;
     font-size: 20px;
@@ -80,8 +101,7 @@ nav img
 .text-imp
 {
     font-family: 'Great Vibes', cursive;
-    font-size: 60px;
-    line-height: 60px;
+    font-size: 3.8em;
     color: rgb(255, 0, 0);
     letter-spacing: 2px;
 }
@@ -117,7 +137,7 @@ nav img
 }
 .content-1
 {
-    padding-top:35px;
+    padding-top:45px;
     padding-bottom: 35px;
 }
 .p-c-2
@@ -140,14 +160,14 @@ nav img
 }
 .content-2
 {
-    padding-top:35px;
+    padding-top:45px;
     padding-bottom: 35px;
     background-color: lightgray;
 }
 /* content speciality */
 .content-pad
 {
-    padding-top: 40px;
+    padding-top: 45px;
     padding-bottom: 35px;  
 }
 .img-cen
@@ -188,7 +208,6 @@ nav img
     font-family: 'Great+Vibes', cursive;
     font-size: 3em;
     padding: 50px 0px;
-    margin-bottom: 60px;
 }
 /* discover */
 .discover
@@ -234,6 +253,7 @@ nav img
 {
     width: 100%;
     position: relative;
+    cursor: pointer;
     
 }
 .text-chef-1
@@ -452,7 +472,6 @@ footer
 .swiper-container 
 {
     width: 100%;
-    padding-top: 50px;
     padding-bottom: 50px;
 }
 
@@ -479,9 +498,6 @@ footer
 }
 .icon-menu
 {
-    width: 40%;
-    height: 80%;
-    padding: 5px;
     margin-left: 20px;
     margin-top: 10px;
     cursor: pointer;
@@ -498,15 +514,34 @@ footer
     #menu {
         display:none;
     }
+    nav img
+    {
+        width: 23%;
+        display: block;
+    }
     .btn-bt{
         padding: 0;
-        font-size: 1em;
+        font-size: 1.7em;
         justify-content: center;
     }
     .text-wel2{
         display: none;
     }
-    
+    .img-head
+    {
+        height: auto;
+    }
+    .slice-text
+    {
+        display: none;
+        /* font-family: 'Great Vibes', cursive;
+        font-size: 16px;
+        color: aliceblue;
+        position: absolute;
+        top: 50%;
+        left: 50%; 
+        transform: translate(-50%,-50%); */
+    }
 }
 li{
     color:white;
@@ -516,4 +551,47 @@ li{
 {
     margin-left: 25px;
     margin-top: 10px;
+}
+/* //------------- */
+.modalbook
+{
+    background-image: url('../img/welcome.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.form-book
+{
+    background-color: rgba(3, 3, 3, 0.7);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.822);
+    border: none;
+}
+label
+{
+    color: aliceblue;
+    font-family: sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+input
+{
+    border-radius: 5px;
+    background-color: rgba(240, 248, 255, 0);
+    color: aliceblue;
+    font-family: sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+@keyframes fadeIn
+{
+    from {
+        opacity: 0;
+        /* -webkit-transform: translate3d(0, 100%, 0); */
+        transform: translate(0);
+      }
+    
+      to {
+        opacity: 1;
+        /* -webkit-transform: translate3d(0, 0, 0); */
+        transform: translate(-50%,-50%);
+      }
 }

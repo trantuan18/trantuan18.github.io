@@ -1,3 +1,4 @@
+// slide món ăn
 var swiper = new Swiper('.swiper-container', {
     effect: 'coverflow',
     grabCursor: true,
@@ -14,6 +15,7 @@ var swiper = new Swiper('.swiper-container', {
         el: '.swiper-pagination',
     },
 });
+
 // menu
 let po = $('#menu').position();
 $(window).scroll(function () {
@@ -37,7 +39,19 @@ $(window).scroll(function () {
         $('#menuSm').removeClass('menu-fixed')
     }
 });
-// end menu
+
+// bỏ placeholder
+$('input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"]').each(function() {
+    var el = this, type = $(el).attr('type');
+    if ($(el).val() == '') $(el).attr('type', 'text');
+    $(el).focus(function() {
+        $(el).attr('type', type);
+        el.click();
+    });
+    $(el).blur(function() {
+        if ($(el).val() == '') $(el).attr('type', 'text');
+    });
+});
 
 // botton back to top 
 $(document).ready(function () {
@@ -58,8 +72,8 @@ $(document).ready(function () {
         }, 500);
     });
 });
-// end back to top
+
+// menu nhỏ 
 $('.icon-menu').on('click',function(){
     $('.menu-left').toggle();
-    // $('.menu-left').removeClass('menu-left');
 })

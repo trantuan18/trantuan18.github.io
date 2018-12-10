@@ -18,16 +18,17 @@
 </head>
 
 <body>
-  <div class="modal fade" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
+  <div class="modal fade modalbook" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content form-book">
         <div class="modal-header">
-          <h4 class="modal-title" id="myModalLabel">Book your table</h4>
+          <h4 class="modal-title" id="myModalLabel" style="color:aliceblue">Book your table</h4>
+          <button type="button" class="btn btn btn-sm" data-dismiss="modal">X</button>
         </div>
-        <div class="modal-body">
-          <form action="" id='checkForm'>
+        <div class="modal-body ">
+          <form action="" id='checkForm' class="">
             <div class="inputbox modal-sub">
-              <label> Your Fullname </label>
+              <label> Your Full Name </label>
               <input class="w-100" type='text' id='name' name='user_name' required='' autocomplete="off" />
               <span class="note"> </span>
 
@@ -44,13 +45,10 @@
             </div>
             <div class="inputbox modal-sub">
               <label> Date </label>
-              <input class="w-100" type='Date' id='date' name='date' required='' autocomplete="off" />
+              <input placeholder="" class="w-100" type='Date' id='date' name='date' required='' autocomplete="off" />
             </div>
-            <input class="btn modal-sub" type='submit' name='ok' value="Submit">
+            <input class="btn modal-sub btn-danger " type='submit' name='ok' value="Submit">
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -86,6 +84,9 @@
           </div>
         </div>
       </div>
+      <div class="  slice-text  ">
+        Welcome to Monaco Restaurant
+      </div>
       <!-- end slice -->
 
       <!-- btn book table -->
@@ -93,18 +94,18 @@
         BOOK NOW
       </button>
       <!-- end book -->
-
+      
       <!-- manu -->
       <nav id="menu" class="nav menu-top justify-content-end ">
-        <a class="nav-link logo" href="#">
+        <b class="nav-link logo" href="#" >
           <img class='logo-img' src="img/beer (1).png" alt="">
           <span style="color: rgb(255, 0, 0)">MO</span>NACO
-        </a>
-        <a class="nav-link" href="#">About Us</a>
-        <a class="nav-link" href="#">Special</a>
-        <a class="nav-link" href="#">Menu </a>
-        <a class="nav-link" href="#">Feed Back</a>
-        <a class="nav-link" href="#">Reserve</a>
+        </b>
+        <a class="nav-link" href="#aboutus">About Us</a>
+        <a class="nav-link" href="#special">Special</a>
+        <a class="nav-link" href="#dis">Menu </a>
+        <a class="nav-link" href="#feedback">Feed Back</a>
+        <a class="nav-link" href="#reserve">Reserve</a>
         <a class="nav-link menu-icon" href="#">
           <img src="img/bell (1).png" alt="">
         </a>
@@ -117,11 +118,11 @@
           </li>
           <li>
             <ul class="menu-left">
-              <li><i>About</i></li>
-              <li><i>Special</i></li>
-              <li><i>Menu</i></li>
-              <li><i>Feed Back</i></li>
-              <li><i>Reserve</i></li>
+              <li><a>About</a></li>
+              <li><a>Special</a></li>
+              <li><a>Menu</a></li>
+              <li><a>Feed Back</a></li>
+              <li><a>Reserve</a></li>
             </ul>
           </li>
         </ul>
@@ -134,7 +135,7 @@
   </div>
   <!-- end back top -->
   <!-- About us -->
-  <div class="container content-1 ">
+  <div id="aboutus"class="container content-1 ">
     <div class="row">
       <div class="wow fadeInLeft col-sm-6">
         <img src="img/chef.png" alt="">
@@ -157,7 +158,7 @@
   </div>
   <!-- end about us  -->
   <!-- special dishes -->
-  <div class=" container-fluid content-2 ">
+  <div id="special"class="container-fluid content-2 ">
     <div class="wow fadeInUp container ">
       <div class="row ">
         <div class="col-sm-3 ">
@@ -234,7 +235,7 @@
   </div>
   <!-- end speciality -->
   <!-- discover -->
-  <div class="container-fluid content-2 ">
+  <div id="dis"class="container-fluid content-2 ">
     <img class="rounded mx-auto d-block" src="img/header-icon-1.png" alt="">
     <p class="text-imp p-c-2 discover">Discover</p>
     <p class="p-c-2 speciality2"><b>EVERYDAY DISHES</b></p>
@@ -341,7 +342,7 @@
 
   <!-- end since -->
   <!-- fedd back -->
-  <div class="container-fluid content-1">
+  <div id='feedback'class="container-fluid content-1">
     <img src="img/left-quote.png" class="img-cen" alt="">
     <p class="text-imp p-c-2 speciality1">Testimonial</p>
     <p class="p-c-2 speciality2"><b>CUSTOMER FEEDBACK</b></p>
@@ -384,7 +385,7 @@
   </div>
   <!-- end feedBack -->
   <!-- book table -->
-  <div class="container-fluid content-book ">
+  <div id='reserve'class="container-fluid content-book ">
     <div class="booknow">
       <button data-toggle="modal" data-target="#bookModal" type="button" class="btn btn-danger btn-bt">
         BOOK YOUR TABLE NOW !
