@@ -16,7 +16,7 @@ var swiper = new Swiper('.swiper-container', {
     },
 });
 
-// menu
+// menu 
 let po = $('#menu').position();
 $(window).scroll(function () {
     let poScroll = $(document).scrollTop();
@@ -26,7 +26,7 @@ $(window).scroll(function () {
     } else {
         $('#menu').addClass('menu-top');
         $('#menu').removeClass('menu-fixed')
-    }
+    };
 });
 let po1 = $('#menuSm').position();
 $(window).scroll(function () {
@@ -36,11 +36,11 @@ $(window).scroll(function () {
         $('#menuSm').removeClass('menu-top');
     } else {
         $('#menuSm').addClass('menu-top');
-        $('#menuSm').removeClass('menu-fixed')
+        $('#menuSm').removeClass('menu-fixed');
     }
 });
 
-// bỏ placeholder
+// bỏ placeholder date
 $('input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"]').each(function() {
     var el = this, type = $(el).attr('type');
     if ($(el).val() == '') $(el).attr('type', 'text');
@@ -68,7 +68,7 @@ $(document).ready(function () {
     $("#back-to-top").on('click', function () {
         var body = $("html, body");
         body.animate({
-            scrollTop: 0
+            scrollTop: 0 
         }, 500);
     });
 });
@@ -76,4 +76,4 @@ $(document).ready(function () {
 // menu nhỏ 
 $('.icon-menu').on('click',function(){
     $('.menu-left').toggle();
-})
+});
