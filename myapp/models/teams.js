@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     underscored: true,
     tableName: 'teams',
-    timetamps: true
+    timestamps: true
   });
   Team.associate = function(models) {
     // associations can be defined here

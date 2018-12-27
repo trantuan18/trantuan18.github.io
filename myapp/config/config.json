@@ -2,23 +2,10 @@
   "development": {
     "username": "postgres",
     "password": "tu1densau",
-    "database": "nodejs_demo",
+    "database": "nodejs",
     "host": "127.0.0.1",
     "dialect": "postgres",
+    "port": 5432 ,
     "logging": true
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "nodejs_demo",
-    "host": "127.0.0.1",
-    "dialect": "postges"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "nodejs_demo",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
   }
 }
