@@ -66,23 +66,14 @@ router.get('/shippers/:ShipperId', async (req, res, next) => {
   }
 })
 
-router.delete('/shippers/:ShipperId', async (req, res, next) => {
-  const {
-    shipperId
-  } = req.params;
+router.delete('/shippers/:shipperId', async (req, res, next) => {
+  const { shipperId } = req.params;
   console.log('===============>re', req.params);
 
   try {
-    const response = await db.Shipper.destroy({
-      where: {
-        id: shipperId
-      }
-    })
+    const response = await db.Shipper.destroy({ where: { id: shipperId } })
     console.log('===============>', response);
-    res.status(200).json({
-      httpCode: 200,
-      message: "xoa thanh cong"
-    });
+    res.status(200).json({ httpCode: 200, message: "xoa thanh cong" });
   } catch (error) {
     throw Error(error.message)
   }
@@ -117,7 +108,7 @@ router.put('/shippers/:shipperId', async (req, res, next) => {
     // validation data
     const validation = validateData(data);
     const validationEmail = validateEmail(data);
-    const validationName = validateName(data,dbOrigin);
+    const validationName = validateName(data.name,dbOrigin);
     if (!validation.status || !validationEmail.status || !validationName.status) {
       return res.status(400).json({
         failures: [validation.failures, validationEmail.failures, validationName.failures],
@@ -125,13 +116,12 @@ router.put('/shippers/:shipperId', async (req, res, next) => {
         httpCode: 400
       })
     }
-    if (validationName){ console.log('ahihi')}
     // UPDATE shippers
     // SET name = data.name, email = data.emai, ...
     // WHERE condition;
     const response = await db.Shipper.update(data, {
       where: {
-        id: data.id
+        id: Number(id)
       },
       returning: true
     });
@@ -209,23 +199,23 @@ function validateEmail(data) {
 
 // kiểm tra trùng tên 
 
-function validateName(data,dbOrigin) {
+function validateName(dataName,dbOrigin) {
   const result = {
     status: true,
     failures: []
   }
-  const requireProperty = [{
-    field: 'name',
-    title: 'Name'
-  }]
+  // const requireProperty = [{
+  //   field: 'name',
+  //   title: 'Name'
+  // }]
   // dinh nghia cac truong bat buoc cua shipper 
   let lent = dbOrigin.length ;
   for ( let i = 0; i < lent; i++){
-    if(dbOrigin[i].name == data.name ) {
+    if(dbOrigin[i].name == dataName ) {
       result.status = false 
       result.failures.push({
-        field: requireProperty.field,
-        message: `The name - ${data.name} - already has a user`
+        field: dataName,
+        message: `The name - ${dataName} - already has a user`
       });
     }
   }
