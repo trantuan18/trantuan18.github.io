@@ -1,0 +1,93 @@
+p {
+	margin: 0 0 10px 0;
+}
+.banner
+{
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+.banner>.text-banner
+{
+    position: absolute;
+    top: 55%;
+    left: 60px;
+    color: aliceblue;
+    font-family: 'Great Vibes', cursive;
+    font-size:12vh;
+}
+.img-banner
+{
+    width: 100%;
+    height: 50vh;
+}
+/* ===================================================== */
+.text-imp-1
+{
+    margin-top: -10px;
+}
+.food-day
+{
+    width: 100%;
+    margin: 15px 0px;
+    display: block;
+    position: relative;
+    z-index: -1;
+}
+.anima
+{
+    position: relative;
+    padding: 0px 0px;
+    z-index: 111;
+}
+.anima::after
+{
+    content: '';
+    position: absolute;
+    top:0px;
+    left:0px;
+    background-color: rgba(0, 0, 0, 0.219);
+    width: 100%;
+    height: 100%;
+}
+.meal
+{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Great Vibes', cursive;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    z-index: 111;
+    cursor: pointer;
+}
+.meal:hover 
+{
+    font-size: 55px;
+}
+/* ====================================================== */
+.about-book
+{
+    margin-top:60px;
+}
+.img-about-book
+{
+    width: 100%;
+    padding: 15px 15px;
+}
+.form-about
+{
+    padding-top: 20px;
+}
+.input-about
+{
+    padding: 10px 5px;
+    margin: 15PX 10PX;
+    border: 1px solid grey;
+    color: #000;
+}
+.ok{
+    padding: 10px 5px;
+    margin: 15PX 25PX;
+}
